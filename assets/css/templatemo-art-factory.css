@@ -987,7 +987,7 @@ services
   margin: auto;
   position: relative;
   margin-bottom: 30px;
-  background: #00b4c6;
+  background: #fafafa;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   border-radius: 50%;
@@ -995,11 +995,12 @@ services
 }
 
 .service-item .icon img {
-  max-width: 50px;
+  max-width: 80px;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  border-radius: 10px;
 }
 
 .service-item .service-title {
