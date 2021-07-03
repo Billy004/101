@@ -11,6 +11,7 @@
     <meta name="description" content="">
     <meta name="author" content="Template Mo">
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
     <title>loginform</title>
 <link rel="stylesheet" type="text/css" href="style.css">
@@ -90,17 +91,53 @@ https://templatemo.com/tm-537-art-factory
                 <div class="row">
                     <div class="left-text col-lg-6 col-md-6 col-sm-12 col-xs-12" data-scroll-reveal="enter left move 30px over 0.6s after 0.4s">
                         <div class ="loginbox">
-                            <img src="avatar.png" class="avatar">
-                            <h5>Login Here</h5>
-                            <form action="login.php" method="post" name="action" value="login" type="hidden" autocomplete="off">
-                                <p>Email</p>
-                                <input type="text" name="email" placeholder="Enter Email">
-                                <p> Password</p>
-                                <input type="password" name="password" placeholder="Enter Password">
-                                <input type="submit" name="submit" value="LOGIN">
-                                <a href="#"> Forgot password?</a>
-                                <a href="signup.html"> Sign up</a>
-                            </form>
+                            <!-- table -->
+                    <?php 
+                        $host = "localhost";
+                        $dbuser = "root";
+                        $dbpassword = "";
+                        $dbname = "101";
+
+                            
+
+                        $mysqli = new mysqli($host,$dbuser, $dbpassword, $dbname); 
+                        $query = "SELECT * FROM admin";
+
+
+                        echo '<table class="table table-striped table-responsive" border="0" cellspacing="2" cellpadding="2"> 
+                              <tr> 
+                                  <th> <font face="Arial">Name</font> </td> 
+                                  <th> <font face="Arial">Email</font> </td> 
+                                  <th> <font face="Arial">Phone</font> </td>
+                                  <th> <font face="Arial">Address</font> </td>
+                                  <th> <font face="Arial">speciality</font> </td> 
+                                  
+                              </tr>';
+
+                        if ($result = $mysqli->query($query)) {
+                            while ($row = $result->fetch_assoc()) {
+                                $fullname = $row["fullname"];
+                                $email = $row["email"];
+                                $Phone = $row["Phone"];
+                                $address = $row["address"];
+                                $speciality = $row["speciality"];
+                            
+                                echo '<tr> 
+                                          <td>'.$fullname.'</td> 
+                                          <td>'.$email.'</td> 
+                                          <td>'.$Phone.'</td> 
+                                          <td>'.$address.'</td>
+                                          <td>'.$speciality.'</td> 
+                                        
+                                      </tr>
+                                      ';
+                            }
+                            
+                            $result->free();
+                            
+                        } 
+                        
+                        ?>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" data-scroll-reveal="enter right move 30px over 0.6s after 0.4s">
