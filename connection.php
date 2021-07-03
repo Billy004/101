@@ -33,7 +33,7 @@
     $results = $conn-> query($sql);
 
     if ($conn->query($sql) === TRUE) {
-        header("location:index.html");
+        header("location:login.html");
       } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
       }
