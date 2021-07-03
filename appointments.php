@@ -88,9 +88,8 @@ https://templatemo.com/tm-537-art-factory
         <!-- ***** Header Text Start ***** -->
         <div class="header-text">
             <div class="container">
-                <div class="row">
-                    <div class="left-text col-lg-6 col-md-6 col-sm-12 col-xs-12" data-scroll-reveal="enter left move 30px over 0.6s after 0.4s">
-                        
+                
+                        <div>
                             <!-- table -->
                     <?php 
                         $host = "localhost";
@@ -101,7 +100,7 @@ https://templatemo.com/tm-537-art-factory
                             
 
                         $mysqli = new mysqli($host,$dbuser, $dbpassword, $dbname); 
-                        $query = "SELECT * FROM appointment";
+                        $query = "SELECT * FROM appointmment";
 
 
                         echo '<table class="table table-striped table-responsive" border="0" cellspacing="2" cellpadding="2"> 
@@ -135,13 +134,10 @@ https://templatemo.com/tm-537-art-factory
                         } 
                         
                         ?>
-                        
+                        </div>
                     </div>
-                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" data-scroll-reveal="enter right move 30px over 0.6s after 0.4s">
-                        <img src="assets/images/slider-icon.png" class="rounded img-fluid d-block mx-auto" alt="First Vector Graphic">
-                    </div>
-                </div>
-            </div>
+                    
+               
         </div>
         <!-- ***** Header Text End ***** -->
     </div>
